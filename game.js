@@ -2,10 +2,10 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
 const ground = new Image();
-ground.src ="ground.png"
+ground.src ="ground.png";
 
 const foodImg = new Image();
-foodImg.src ="food.png"
+foodImg.src ="food.png";
 
 let box = 32;
 
@@ -29,27 +29,27 @@ let dir;
 
 function direction(event) {
     if(event.keyCode == 37 && dir != "right")
-        dir = "left";
+        {dir = "left";}
     if(event.keyCode == 38 && dir != "down")
-        dir = "up";
+        {dir = "up";}
     if(event.keyCode == 39 && dir != "left")
-        dir = "right";
+        {dir = "right";}
     if(event.keyCode == 40 && dir != "up")
-        dir = "down";
+        {dir = "down";}
     if(event.keyCode == 65 && dir != "right")
-        dir = "left";
+        {dir = "left";}
     if(event.keyCode == 87 && dir != "down")
-        dir = "up";
+        {dir = "up";}
     if(event.keyCode == 68 && dir != "left")
-        dir = "right";
+        {dir = "right";}
     if(event.keyCode == 83 && dir != "up")
-        dir = "down";
-};
+        {dir = "down";}
+}
 
 function eatTail(head, arr) {
     for( let i = 0; i < arr.length; i++) {
      if(head.x == arr[i].x && head.y == arr[i].y)
-     clearInterval(game);   
+     {clearInterval(game);}   
     }
 }
 
@@ -80,14 +80,13 @@ function drawGame() {
         snake.pop();
     }
 
-    if(snakeX < box || snakeX > box * 17 
-        || snakeY < 1 * box || snakeY > box * 17)
-        clearInterval(game);
+    if(snakeX < box || snakeX > box * 17 || snakeY < 1 * box || snakeY > box * 17)
+        {clearInterval(game);}
 
-    if(dir == "left") snakeX -= box;
-    if(dir == "right") snakeX += box;
-    if(dir == "up") snakeY -= box;
-    if(dir == "down") snakeY += box;
+    if(dir == "left") {snakeX -= box;}
+    if(dir == "right") {snakeX += box;}
+    if(dir == "up") {snakeY -= box;}
+    if(dir == "down") {snakeY += box;}
 
     let newHead = {
         x: snakeX,
@@ -98,6 +97,6 @@ function drawGame() {
 
     snake.unshift(newHead);
 
-};
+}
 
 let game = setInterval(drawGame, 80);
