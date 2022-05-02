@@ -8,11 +8,10 @@ text-align: center;
 color: whitesmoke
 }
 
-p {
-    position: fixed;
-   bottom: 150px;
-   right: 45%;
-   
+
+.block {
+  max-width: 200px;
+  margin: 0px auto;
 }
 
 body {
