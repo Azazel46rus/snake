@@ -1,5 +1,6 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
+const btn = document.querySelector("button");
 
 const ground = new Image();
 ground.src ="ground.png";
@@ -99,4 +100,8 @@ function drawGame() {
 
 }
 
-let game = setInterval(drawGame, 100);
+btn.addEventListener("click", () => {
+    alert(`Ваш счёт ${score}`);
+});
+
+let game = setInterval(drawGame, 110);
